@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = open(os.path.join("oxford", "layout", "version.txt")).read().strip()
 
 setup(name='keble.layout',
       version=version,
