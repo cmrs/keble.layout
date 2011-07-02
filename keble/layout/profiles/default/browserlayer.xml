@@ -1,0 +1,4 @@
+<layers>
+    <layer name="keble.layout"
+        interface="keble.layout.browser.interfaces.IKebleLayout" />
+</layers>
