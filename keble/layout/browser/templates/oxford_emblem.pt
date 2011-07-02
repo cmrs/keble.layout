@@ -1,0 +1,5 @@
+<div id="oxford-emblem"
+    tal:define="portal context/@@plone_portal_state/portal">
+
+    <img src="#" tal:attributes="src string:${portal/absolute_url}/++resource++keble.theme.images/oxford_emblem.gif" />
+</div>

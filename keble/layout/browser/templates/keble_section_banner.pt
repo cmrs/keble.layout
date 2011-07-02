@@ -1,0 +1,14 @@
+<div id="section-banner" tal:condition="python:not view.isPortalRoot() and context.meta_type != 'HomePage'"
+        tal:define="banner_image view/get_banner_image;
+                    banner_image_url python:banner_image and banner_image.absolute_url() or None;
+                    portal context/@@plone_portal_state/portal;
+                    portal_url portal/absolute_url">
+
+    <tal:image condition="banner_image_url">
+        <img src="" tal:attributes="src banner_image_url" />
+    </tal:image>
+
+    <tal:nodefault condition="not:banner_image_url">
+        <img src="" tal:attributes="src string:${portal_url}/++resource++keble.theme.images/section_banner.gif" />
+    </tal:nodefault>
+</div>

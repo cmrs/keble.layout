@@ -4,6 +4,52 @@
     i18n_domain="keble.layout">
 
   <browser:viewlet
+      for="*"
+      name="keble.layout.oxfordemblem"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".viewlets.OxfordEmblem"
+      permission="zope2.View" 
+      layer=".interfaces.IKebleLayout"
+      />
+
+  <browser:viewlet
+      for="*"
+      name="keble.layout.searchbox"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class="plone.app.layout.viewlets.common.SearchBoxViewlet"
+      template="templates/keble_searchbox.pt"
+      permission="zope2.View"
+      layer=".interfaces.IKebleLayout"
+      />
+
+  <browser:viewlet  
+      for="*"
+      name="keble.layout.sectionbanner" 
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".viewlets.KebleSectionBanner"
+      permission="zope2.View"
+      layer=".interfaces.IKebleLayout"
+      />   
+
+  <browser:viewlet
+      name="keble.layout.global_sections"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class="plone.app.layout.viewlets.common.GlobalSectionsViewlet"
+      template="templates/keble_sections.pt"
+      permission="zope2.View"
+      layer=".interfaces.IKebleLayout"
+      />
+
+  <browser:viewlet
+      name="keble.layout.path_bar"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      class="plone.app.layout.viewlets.common.PathBarViewlet"
+      template="templates/keble_breadcrumbs.pt"
+      permission="zope2.View"
+      layer=".interfaces.IKebleLayout"
+      />
+
+  <browser:viewlet
       name="keble.layout.footer"
       manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
       class="plone.app.layout.viewlets.common.FooterViewlet"
