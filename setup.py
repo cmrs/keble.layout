@@ -4,7 +4,7 @@ import os
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = open(os.path.join("oxford", "layout", "version.txt")).read().strip()
+version = open(os.path.join("keble", "layout", "version.txt")).read().strip()
 
 long_description = (
     read(os.path.join('docs', 'README.txt'))
