@@ -1,55 +1,36 @@
-import unittest
+from plone.app.testing import PloneSandboxLayer
+from plone.app.testing import PLONE_FIXTURE
+from plone.app.testing import IntegrationTesting
 
-#from zope.testing import doctestunit
-#from zope.component import testing
-from Testing import ZopeTestCase as ztc
+from plone.testing import z2
 
-from Products.Five import fiveconfigure
-from Products.PloneTestCase import ptc
-from Products.PloneTestCase.layer import PloneSite
-ptc.setupPloneSite()
+class TestCase(PloneSandboxLayer):
 
-import keble.layout
+    defaultBases = (PLONE_FIXTURE,)
 
+    def setUpZope(self, app, configurationContext):
+        # Load ZCML
+        import keble.layout
+        self.loadZCML(package=keble.layout)
 
-class TestCase(ptc.PloneTestCase):
+        # Install product and call its initialize() function
+        z2.installProduct(app, 'keble.layout')
 
-    class layer(PloneSite):
+        # Note: you can skip this if my.product is not a Zope 2-style
+        # product, i.e. it is not in the Products.* namespace and it
+        # does not have a <five:registerPackage /> directive in its
+        # configure.zcml.
 
-        @classmethod
-        def setUp(cls):
-            fiveconfigure.debug_mode = True
-            ztc.installPackage(keble.layout)
-            fiveconfigure.debug_mode = False
+    def setUpPloneSite(self, portal):
+        # Install into Plone site using portal_setup
+        self.applyProfile(portal, 'keble.layout:default')
 
-        @classmethod
-        def tearDown(cls):
-            pass
+    def tearDownZope(self, app):
+        # Uninstall product
+        z2.uninstallProduct(app, 'keble.layout')
 
+        # Note: Again, you can skip this if my.product is not a Zope 2-
+        # style product
 
-def test_suite():
-    return unittest.TestSuite([
-
-        # Unit tests
-        #doctestunit.DocFileSuite(
-        #    'README.txt', package='keble.layout',
-        #    setUp=testing.setUp, tearDown=testing.tearDown),
-
-        #doctestunit.DocTestSuite(
-        #    module='keble.layout.mymodule',
-        #    setUp=testing.setUp, tearDown=testing.tearDown),
-
-
-        # Integration tests that use PloneTestCase
-        #ztc.ZopeDocFileSuite(
-        #    'README.txt', package='keble.layout',
-        #    test_class=TestCase),
-
-        #ztc.FunctionalDocFileSuite(
-        #    'browser.txt', package='keble.layout',
-        #    test_class=TestCase),
-
-        ])
-
-if __name__ == '__main__':
-    unittest.main(defaultTest='test_suite')
+KEBLE_LAYOUT_FIXTURE = TestCase()
+KEBLE_LAYOUT_INTEGRATION_TESTING = IntegrationTesting(bases=(KEBLE_LAYOUT_FIXTURE,), name="KebleLayout:Integration")
