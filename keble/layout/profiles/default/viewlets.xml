@@ -6,15 +6,15 @@
   <viewlet name="plone.app.i18n.locales.languageselector"/>
   <viewlet name="plone.searchbox"/>
   <viewlet name="plone.logo"/>
-  <viewlet name="keble.theme.oxfordemblem"/>
-  <viewlet name="keble.theme.searchbox"/>
+  <viewlet name="keble.layout.oxfordemblem"/>
+  <viewlet name="keble.layout.searchbox"/>
   <viewlet name="plone.global_sections"/>
-  <viewlet name="keble.theme.global_sections"/>
-  <viewlet name="keble.theme.sectionbanner"/>
+  <viewlet name="keble.layout.global_sections"/>
+  <viewlet name="keble.layout.sectionbanner"/>
  </order>
  <order manager="plone.abovecontent" skinname="*">
   <viewlet name="plone.path_bar"/>
-  <viewlet name="keble.theme.path_bar"/>
+  <viewlet name="keble.layout.path_bar"/>
  </order>
  <hidden manager="plone.portalheader" skinname="*">
   <viewlet name="plone.searchbox"/>
