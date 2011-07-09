@@ -40,3 +40,16 @@ class TestViewlets(unittest.TestCase):
         context = self.portal
         viewlet_names = self.get_viewlet_manager(context, 'plone.portalheader')
         assert 'keble.layout.sectionbanner' in viewlet_names
+
+    def testSearchBox(self):
+        context = self.portal
+        viewlet_names = self.get_viewlet_manager(context, 'plone.portalheader')
+        assert 'keble.layout.searchbox' in viewlet_names
+
+    def testGlobalSections(self):
+        context = self.portal
+        viewlet_names = self.get_viewlet_manager(context, 'plone.portalheader')
+        assert 'keble.layout.global_sections' in viewlet_names
+
+
+
