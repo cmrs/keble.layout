@@ -13,15 +13,10 @@ class TestInstallation(unittest.TestCase):
     """Ensure product is properly installed"""
     layer = KEBLE_LAYOUT_INTEGRATION_TESTING
 
-    def testSkinLayer(self):
-        portal = self.layer['portal']
-        with ploneSite() as portal:
-            applyProfile(portal, 'keble.layout:default')
-        portal_skins = getattr(portal, 'portal_skins')
-        #assert 'cmrs' in portal_skins.getSkinSelections()
+    def setUp(self):
+        self.portal = self.layer['portal']
 
     def testBrowserLayerRegistered(self):
-        portal = self.layer['portal']
-        sm = getSiteManager(portal)
+        sm = getSiteManager(self.portal)
         layers = [o.__name__ for o in registered_layers()]
         assert 'IKebleLayout' in layers
