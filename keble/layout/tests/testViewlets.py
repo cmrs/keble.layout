@@ -18,7 +18,7 @@ from base import KEBLE_LAYOUT_INTEGRATION_TESTING
 from base import TestCase
 
 class TestViewlets(unittest.TestCase):
-    """Ensure product is properly installed"""
+    """Ensure the right viewlets are available"""
     layer = KEBLE_LAYOUT_INTEGRATION_TESTING
 
     def setUp(self):                                
@@ -36,20 +36,31 @@ class TestViewlets(unittest.TestCase):
         viewlet_names = [v.__name__ for v in manager.viewlets]
         return viewlet_names
 
-    def testSectionBanner(self):
-        context = self.portal
-        viewlet_names = self.get_viewlet_manager(context, 'plone.portalheader')
-        assert 'keble.layout.sectionbanner' in viewlet_names
-
     def testSearchBox(self):
         context = self.portal
         viewlet_names = self.get_viewlet_manager(context, 'plone.portalheader')
         assert 'keble.layout.searchbox' in viewlet_names
+        assert 'plone.searchbox' not in viewlet_names
 
     def testGlobalSections(self):
         context = self.portal
         viewlet_names = self.get_viewlet_manager(context, 'plone.portalheader')
         assert 'keble.layout.global_sections' in viewlet_names
+        assert 'plone.global_sections' not in viewlet_names
+
+    def testSectionBanner(self):
+        context = self.portal
+        viewlet_names = self.get_viewlet_manager(context, 'plone.portalheader')
+        assert 'keble.layout.sectionbanner' in viewlet_names
+
+    def testFooter(self):
+        context = self.portal
+        viewlet_names = self.get_viewlet_manager(context, 'plone.portalfooter')
+        assert 'keble.layout.footer' in viewlet_names
+        assert 'plone.footer' not in viewlet_names
+        assert 'plone.colophon' not in viewlet_names
+        assert 'plone.site_actions' not in viewlet_names
+        assert 'plone.analytics' not in viewlet_names
 
 
-
+ 
