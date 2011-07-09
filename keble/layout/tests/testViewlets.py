@@ -59,7 +59,6 @@ class TestViewlets(unittest.TestCase):
 
     def testFooter(self):
         context = self.portal
-        import pdb;pdb.set_trace()
         viewlet_names = self.get_viewlet_manager(context, 'plone.portalfooter')
         assert 'keble.layout.footer' in viewlet_names
         print viewlet_names
