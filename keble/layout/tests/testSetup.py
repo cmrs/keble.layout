@@ -24,3 +24,7 @@ class TestInstallation(unittest.TestCase):
     def testSkinLayer(self):
         portal_skins = getattr(self.portal, 'portal_skins')
         assert 'Keble Default' in portal_skins.getSkinSelections()
+
+    def testCurrentSkinLayer(self):
+        current_skin = self.portal.getCurrentSkinName()
+        assert 'Keble Default' == current_skin
