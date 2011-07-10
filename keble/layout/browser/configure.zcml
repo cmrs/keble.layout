@@ -64,4 +64,10 @@
       layer=".interfaces.IKebleLayout"
       />
 
+  <browser:resourceDirectory
+      name="keble.layout.images"
+      directory="images"
+      layer=".interfaces.IKebleLayout"
+      />
+
 </configure>
