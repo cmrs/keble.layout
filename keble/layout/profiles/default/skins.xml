@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <object name="portal_skins" allow_any="False" cookie_persistence="False"
    default_skin="Keble Default">
+ <object name="keble_default"
+    meta_type="Filesystem Directory View"
+    directory="keble.layout:skins/keble_default"/>
  <skin-path name="Keble Default" based-on="Plone Classic Theme">
   <layer name="keble_default"
      insert-after="custom"/>
