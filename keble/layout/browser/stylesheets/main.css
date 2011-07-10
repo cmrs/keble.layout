@@ -1,4 +1,4 @@
-/* Stylesheet for the 'Keble Theme Package' Plone theme */
+/* Stylesheet for the 'Keble Layout Package' Plone theme */
 
 html {
     overflow-y: scroll;
@@ -156,7 +156,7 @@ div#portal-header {
     width: 950px;
     /*height: 311px;*/
     margin: 0 auto;
-    background-image: url("++resource++keble.theme.images/bg_portal_header.gif");
+    background-image: url("++resource++keble.layout.images/bg_portal_header.gif");
     background-repeat: repeat-x;
     background-color: #FFFFFF;
     position: relative;
@@ -198,7 +198,7 @@ div#portal-searchbox {
 }
 
 .LSBox {
-    background-image: url("++resource++keble.theme.images/searchbox.gif");
+    background-image: url("++resource++keble.layout.images/searchbox.gif");
     background-repeat: no-repeat;
     height: 28px;
     position: relative;
@@ -407,7 +407,7 @@ div.footer-link-last {
 
 div.footer-link a, 
 div.footer-link-last a {
-    background-image: url("++resource++keble.theme.images/footer_link_arrow.gif");
+    background-image: url("++resource++keble.layout.images/footer_link_arrow.gif");
     background-position: 0 58%;
     background-repeat: no-repeat;
     padding-left: 15px;
@@ -468,7 +468,7 @@ div#homepage-body-text-more {
 }
 
 div#homepage-body-lists {
-    background-image: url("++resource++keble.theme.images/homepage_lists_bg.gif");
+    background-image: url("++resource++keble.layout.images/homepage_lists_bg.gif");
     background-position: 50% 0;
     background-repeat: repeat-y;
     float: left;
@@ -529,7 +529,7 @@ div.more-link {
 }
 
 div.more-link a {
-    background-image: url("++resource++keble.theme.images/more_line.gif");
+    background-image: url("++resource++keble.layout.images/more_line.gif");
     background-position: 0 58%;
     background-repeat: no-repeat;
     color: #970008;
@@ -640,7 +640,7 @@ ul.navTreeLevel1 li.navTreeCurrentNode a.navTreeCurrentItem {
 
 ul.navTreeLevel1 li {
 /*
-    background-image: url("++resource++keble.theme.images/nav_subitem_icon.gif");
+    background-image: url("++resource++keble.layout.images/nav_subitem_icon.gif");
     background-position: 0% 50%;
     background-repeat: no-repeat;
 */
@@ -655,7 +655,7 @@ ul.navTreeLevel1 li.navTreeItem a {
     color: #434343 !important;
     font-size: 1.2em;
     font-weight: normal;
-    background-image: url("++resource++keble.theme.images/nav_subitem_icon.gif");
+    background-image: url("++resource++keble.layout.images/nav_subitem_icon.gif");
     background-position: 0 50%;
     background-repeat: no-repeat;
     padding-left: 14px !important;
@@ -766,7 +766,7 @@ body.portaltype-academic #content,
 body.portaltype-keblenews #content,
 body.portaltype-kebleevent #content {
 /*
-    background-image: url("++resource++keble.theme.images/bg_keble_types.png");
+    background-image: url("++resource++keble.layout.images/bg_keble_types.png");
     background-repeat: repeat-y;
 */
     padding-right: 5px !important;
