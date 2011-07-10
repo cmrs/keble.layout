@@ -58,4 +58,10 @@
       layer=".interfaces.IKebleLayout"
       />
 
+  <browser:resourceDirectory
+      name="keble.layout.stylesheets"
+      directory="stylesheets"
+      layer=".interfaces.IKebleLayout"
+      />
+
 </configure>

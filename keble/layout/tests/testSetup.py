@@ -28,3 +28,7 @@ class TestInstallation(unittest.TestCase):
     def testCurrentSkinLayer(self):
         current_skin = self.portal.getCurrentSkinName()
         assert 'Keble Default' == current_skin
+
+    def testCssInstalled(self):
+        css_ids = self.portal.portal_css.getResourceIds()
+        assert '++resource++keble.layout.stylesheets/main.css' in css_ids
