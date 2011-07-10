@@ -7,6 +7,8 @@ from plone.app.testing import ploneSite
 from plone.app.testing import applyProfile
 from plone.browserlayer.utils import registered_layers
 
+from Products.CMFCore.utils import getToolByName
+
 from base import KEBLE_LAYOUT_INTEGRATION_TESTING
 
 class TestInstallation(unittest.TestCase):
@@ -32,3 +34,14 @@ class TestInstallation(unittest.TestCase):
     def testCssInstalled(self):
         css_ids = self.portal.portal_css.getResourceIds()
         assert '++resource++keble.layout.stylesheets/main.css' in css_ids
+
+class TestReinstall(unittest.TestCase):
+    """Ensure product can be reinstalled safely"""
+    layer = KEBLE_LAYOUT_INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+
+    def testReinstall(self):
+        portal_setup = getToolByName(self.portal, 'portal_setup')
+        portal_setup.runAllImportStepsFromProfile('profile-keble.layout:default')
