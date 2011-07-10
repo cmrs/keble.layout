@@ -41,7 +41,7 @@
         <input class="keble-search"
                type="image"
                value="Search"
-               src="" tal:attributes="src string:${portal_url}/++resource++keble.theme.images/search_icon.gif"
+               src="" tal:attributes="src string:${portal_url}/++resource++keble.layout.images/search_icon.gif"
                />
 
 
