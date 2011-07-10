@@ -141,7 +141,7 @@ body.portaltype-plone-site div#portal-breadcrumbs {
 }
 
 div#portal-top {
-    background-image: url("++resource++keble.theme.images/bg_portal_top.gif");
+    background-image: url("++resource++keble.layout.images/bg_portal_top.gif");
     background-repeat: repeat-x;
     /*height: 156px;*/
     /*height: 310px;*/
