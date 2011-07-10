@@ -8,6 +8,7 @@
   <five:registerPackage package="." initialize=".initialize" />
 
   <include package=".browser" />
+  <include file="skins.zcml" />
 
   <genericsetup:registerProfile
       name="default"
@@ -16,6 +17,5 @@
       description="Installs the keble.layout package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
   
 </configure>

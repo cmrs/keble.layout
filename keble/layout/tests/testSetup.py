@@ -35,6 +35,10 @@ class TestInstallation(unittest.TestCase):
         css_ids = self.portal.portal_css.getResourceIds()
         assert '++resource++keble.layout.stylesheets/main.css' in css_ids
 
+    def testSkinLayersInstalled(self):
+        assert 'keble_default' in self.portal.portal_skins.objectIds()
+        assert 'kc_logo.gif' in self.portal.portal_skins.keble_default.objectIds()
+
 class TestReinstall(unittest.TestCase):
     """Ensure product can be reinstalled safely"""
     layer = KEBLE_LAYOUT_INTEGRATION_TESTING
