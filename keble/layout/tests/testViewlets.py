@@ -3,10 +3,8 @@ import unittest2 as unittest
 from plone.app.testing import PLONE_INTEGRATION_TESTING
 from plone.app.testing import ploneSite
 from plone.app.testing import applyProfile
-from plone.app.viewletmanager.interfaces import IViewletSettingsStorage
 
 from zope.component import getAdapters
-from zope.component import getUtility
 from zope.component import queryMultiAdapter
 from zope.interface import alsoProvides
 from zope.viewlet.interfaces import IViewletManager, IViewlet
@@ -43,14 +41,14 @@ class TestViewlets(unittest.TestCase):
         viewlet_names = self.get_viewlet_manager(context, 'plone.portalheader')
         assert 'keble.layout.searchbox' in viewlet_names
         print viewlet_names
-        #assert 'plone.searchbox' not in viewlet_names
+        assert 'plone.searchbox' not in viewlet_names
 
     def testGlobalSections(self):
         context = self.portal
         viewlet_names = self.get_viewlet_manager(context, 'plone.portalheader')
         assert 'keble.layout.global_sections' in viewlet_names
         print viewlet_names
-        #assert 'plone.global_sections' not in viewlet_names
+        assert 'plone.global_sections' not in viewlet_names
 
     def testSectionBanner(self):
         context = self.portal
@@ -62,12 +60,7 @@ class TestViewlets(unittest.TestCase):
         viewlet_names = self.get_viewlet_manager(context, 'plone.portalfooter')
         assert 'keble.layout.footer' in viewlet_names
         print viewlet_names
-        #assert 'plone.footer' not in viewlet_names
-        #assert 'plone.colophon' not in viewlet_names
-        #assert 'plone.site_actions' not in viewlet_names
-        #assert 'plone.analytics' not in viewlet_names
-
-    def testViewletStorage(self):
-        storage = getUtility(IViewletSettingsStorage)
-        hidden_viewlets = storage.getHidden('plone.portalheader', 'Keble Default')
-
+        assert 'plone.footer' not in viewlet_names
+        assert 'plone.colophon' not in viewlet_names
+        assert 'plone.site_actions' not in viewlet_names
+        assert 'plone.analytics' not in viewlet_names
