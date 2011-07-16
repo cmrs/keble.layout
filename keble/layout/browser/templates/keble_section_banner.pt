@@ -6,8 +6,7 @@
     <tal:image condition="banner_image">
         <img tal:replace="structure banner_image" />
     </tal:image>
-<div tal:content="string:foo${banner_image}" />
     <tal:nodefault condition="not:banner_image">
-        <img src="" tal:attributes="src string:${portal_url}/++resource++keble.layout.images/section_banner.gif" />
+        <img tal:attributes="src string:${portal_url}/++resource++keble.layout.images/section_banner.gif" />
     </tal:nodefault>
 </div>
