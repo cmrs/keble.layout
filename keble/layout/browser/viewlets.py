@@ -15,7 +15,6 @@ class KebleSectionBanner(ViewletBase):
         portal_catalog = getToolByName(self.context, 'portal_catalog')
         home_pages = portal_catalog(portal_type='HomePage')
         if not home_pages:
-            print 'none found'
             return
         home_page = home_pages[0].getObject()
         return home_page.getRandomHomeImage()
