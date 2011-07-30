@@ -12,9 +12,9 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="keble.layout"
+      title="Keble Layout"
       directory="profiles/default"
-      description="Installs the keble.layout package"
+      description="Base profile for Keble related sites"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
