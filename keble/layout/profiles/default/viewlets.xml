@@ -8,7 +8,6 @@
   <viewlet name="keble.layout.oxfordemblem"/>
   <viewlet name="keble.layout.searchbox"/>
   <viewlet name="keble.layout.global_sections"/>
-  <viewlet name="keble.layout.sectionbanner"/>
  </order>
  <order manager="plone.abovecontent" skinname="*">
   <viewlet name="plone.path_bar"/>

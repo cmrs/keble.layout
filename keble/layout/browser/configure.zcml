@@ -22,15 +22,6 @@
       layer=".interfaces.IKebleLayout"
       />
 
-  <browser:viewlet  
-      for="*"
-      name="keble.layout.sectionbanner" 
-      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-      class=".viewlets.KebleSectionBanner"
-      permission="zope2.View"
-      layer=".interfaces.IKebleLayout"
-      />   
-
   <browser:viewlet
       name="keble.layout.global_sections"
       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"

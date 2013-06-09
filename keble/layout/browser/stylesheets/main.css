@@ -674,12 +674,12 @@ ul.navTreeLevel1 li.navTreeItem a {
 
 /* section banner */
 
-div#section-banner {
+.carousel {
     background-color: #FFFFFF;
     padding: 3px 10px 0;
 }
 
-div#section-banner img {
+.carousel img {
     width: 930px;
     height: 100px;
 }
