@@ -38,10 +38,9 @@
                i18n:attributes="value label_search;" />
 -->
 
-        <input class="keble-search"
-               type="image"
-               value="Search"
-               src="" tal:attributes="src string:${portal_url}/++resource++keble.layout.images/search_icon.gif"
+        <input class="searchButton icon-search icon-2x" 
+               type="submit"
+               value="&#xf002;"
                />
 
 
